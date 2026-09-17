@@ -13,7 +13,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/gradle-build-action@v3
-      - run: gradle bundleRelease
+        with:
+          cache-disabled: true
+      - name: Build AAB
+        run: gradle bundleRelease --no-daemon --no-configuration-cache -Djava.awt.headless=true -Dorg.gradle.parallel=false
       - uses: actions/upload-artifact@v4
         with:
           name: SpendLimit-AAB
