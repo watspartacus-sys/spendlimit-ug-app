@@ -20,4 +20,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SpendLimit-AAB
-      path: app/build/outputs/bundle/release/*.aab
+          path: app/build/outputs/bundle/release/*.aab
