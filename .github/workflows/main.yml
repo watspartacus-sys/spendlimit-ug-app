@@ -11,12 +11,15 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
+          distribution: 'temurin'
       - uses: gradle/gradle-build-action@v3
         with:
           cache-disabled: true
+          cache-read-only: false
       - name: Build AAB
-        run: gradle bundleRelease --no-daemon --no-configuration-cache -Djava.awt.headless=true -Dorg.gradle.parallel=false
+        run: |
+          chmod +x gradlew
+          ./gradlew bundleRelease --no-daemon --no-configuration-cache --no-parallel -Djava.awt.headless=true -Dorg.gradle.configuration-cache=false -Dksp.incremental=false
       - uses: actions/upload-artifact@v4
         with:
           name: SpendLimit-AAB
