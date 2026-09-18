@@ -12,22 +12,16 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Fix gradlew
-        run: |
-          ls -la
-          chmod +x gradlew || echo "gradlew not found, will use gradle"
-      - uses: gradle/gradle-build-action@v3
+      - name: Setup Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
         with:
-          cache-disabled: true
-          cache-read-only: false
-      - name: Build AAB
+          gradle-version: 8.9
+      - name: Build
         run: |
-          if [ -f "./gradlew" ]; then
-            ./gradlew bundleRelease --no-daemon --no-configuration-cache --no-parallel -Djava.awt.headless=true
-          else
-            gradle bundleRelease --no-daemon --no-configuration-cache --no-parallel -Djava.awt.headless=true
-          fi
+          chmod +x gradlew || true
+          gradle bundleRelease --no-daemon --stacktrace
       - uses: actions/upload-artifact@v4
         with:
           name: SpendLimit-AAB
           path: app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error
