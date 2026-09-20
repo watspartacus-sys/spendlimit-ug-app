@@ -54,7 +54,6 @@ class SpendLimitViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    // FIXED: line 141 and others - wrapped in launch
     fun addLimit(limit: SpendingLimitEntity) {
         viewModelScope.launch {
             repository.insertLimit(limit)
