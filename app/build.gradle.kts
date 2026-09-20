@@ -1,8 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
 }
-
 android {
     namespace = "com.example.spendlimitug"
     compileSdk = 34
@@ -32,11 +31,10 @@ android {
         kotlinCompilerExtensionVersion = "1.5.14"
     }
 }
-
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
     implementation("androidx.compose.ui:ui:1.6.8")
     implementation("androidx.compose.ui:ui-graphics:1.6.8")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.8")
