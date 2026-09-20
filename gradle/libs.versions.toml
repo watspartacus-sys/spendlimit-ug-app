@@ -11,7 +11,7 @@ composeBom = "2024.09.00"
 roomRuntime = "2.6.1"
 roomKtx = "2.6.1"
 roomCompiler = "2.6.1"
-googleDevtoolsKsp = "1.9.22-1.0.17"
+googleDevtoolsKsp = "1.9.24-1.0.20"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
