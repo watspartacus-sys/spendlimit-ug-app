@@ -1,3 +1,3 @@
-package com.example.ui.theme
+ package com.example.ui.theme
 import androidx.compose.material3.Typography
 val Typography = Typography()
