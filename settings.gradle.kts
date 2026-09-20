@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SpendLimit UG"
-include(":app") 
+include(":app")
