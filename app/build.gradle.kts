@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [
+    alias(libs.plugins.google.services)
         VillageGroup::class,
         Member::class,
         Saving::class,
