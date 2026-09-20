@@ -3,12 +3,3 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.ksp) apply false
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "SpendLimit UG"
-include(":app")
