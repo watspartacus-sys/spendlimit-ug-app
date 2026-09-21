@@ -15,7 +15,7 @@ jobs:
       - name: Clean Gradle Cache
         run: rm -rf ~/.gradle/caches
       - name: Build Release AAB
-        run:./gradlew bundleRelease
+        run: ./gradlew bundleRelease
       - name: Upload AAB
         uses: actions/upload-artifact@v4
         with:
